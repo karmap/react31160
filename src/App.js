@@ -9,6 +9,7 @@ import CardNew from './components/CardNew';
 import Contador from './components/Contador';
 import CountriesContainer from './components/CountriesContainer';
 import StarshipsContainer from './components/swapi/StarshipsContainer';
+import MoviesContainer from './components/movies/MoviesContainer';
 
 function App() {
 
@@ -48,10 +49,11 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <CardNew otroComponente={Saludo}></CardNew>
+      {/* <CardNew otroComponente={Saludo}></CardNew> */}
       <Contador></Contador>
       {/* <CountriesContainer></CountriesContainer> */}
-      <StarshipsContainer/>
+      {/* <StarshipsContainer/> */}
+      <MoviesContainer/>
     </div>
   );
 }
