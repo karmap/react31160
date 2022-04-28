@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 const MovieCard = ( props ) => {
   
-  const {title, director, year, duration, img} = props.movie
+  const {id, title, director, year, duration, img} = props.movie
 
   const defaultImg = 'https://previews.123rf.com/images/pavlostv/pavlostv1806/pavlostv180600511/102793693-icono-de-pel%C3%ADcula-vector-de-stock.jpg?fj=1'
 
@@ -13,7 +15,7 @@ const MovieCard = ( props ) => {
       <div>{year}</div>
       <div>{duration}</div>
       <div className="card-actions justify-end">
-        <button className="btn btn-primary">Ver</button>
+        <Link to={`/pelicula/${id}`} className="btn btn-primary">Ver</Link>
       </div>
     </div>
   </div>

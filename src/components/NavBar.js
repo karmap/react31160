@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const NavBar = () => {
 
   const estilos = {
@@ -7,8 +9,8 @@ const NavBar = () => {
 
   return (
     <div>
-        <li style={estilos}>Inicio</li>
-        <li style={{color: 'red'}}>Computadoras</li>
+        <li style={estilos}><Link to='/'>Inicio</Link></li>
+        <li style={{color: 'red'}}><Link to='/contador'>Contador</Link></li>
         <li>Celulares</li>
         <li>Tablets</li>
     </div>

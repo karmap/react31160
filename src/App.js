@@ -10,6 +10,8 @@ import Contador from './components/Contador';
 import CountriesContainer from './components/CountriesContainer';
 import StarshipsContainer from './components/swapi/StarshipsContainer';
 import MoviesContainer from './components/movies/MoviesContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MovieDetail from './components/movies/MovieDetail';
 
 function App() {
 
@@ -20,41 +22,14 @@ function App() {
   const myFuncion = () => { /*logica*/ }
 
   return (
-    <div className="App">
-      {/* <DaisyNavBar/> */}
-      {/* <NavBar/>
-      <h1 className={styles.header}>Hola Mundo con React!</h1>
-      
-      <Saludo name='Ana' edad='20' funcionalidad={myFuncion}/>
-      <Saludo name='Juan' edad='32'/>
-      <Saludo name='Maria' edad='27'/>
-
-      <Card>
-        <Saludo name='Agustín' edad='34'/>
-      </Card>
-
-      <ItemListContainer/> */}
-
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <CardNew otroComponente={Saludo}></CardNew> */}
-      <Contador></Contador>
-      {/* <CountriesContainer></CountriesContainer> */}
-      {/* <StarshipsContainer/> */}
-      <MoviesContainer/>
-    </div>
+    <BrowserRouter>
+      <NavBar></NavBar>
+      <Routes>
+        <Route path='/' element={<MoviesContainer/>} />
+        <Route path='/contador' element={<Contador/>} />
+        <Route path='/pelicula/:movieId' element={<MovieDetail/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
