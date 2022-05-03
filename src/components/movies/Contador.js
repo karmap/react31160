@@ -16,8 +16,9 @@ const Contador = () => {
   } , [count])
   
 
-  const addHandler = () => { 
+  const addHandler = (event) => { 
     console.log('Se está sumando');
+    console.log(event);
     setCount(count + 1)
   }
 

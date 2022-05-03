@@ -6,12 +6,14 @@ import Saludo from './components/Saludo';
 import Card from './components/Card';
 import ItemListContainer from './components/ItemListContainer';
 import CardNew from './components/CardNew';
-import Contador from './components/Contador';
+import Contador from './components/movies/Contador';
 import CountriesContainer from './components/CountriesContainer';
 import StarshipsContainer from './components/swapi/StarshipsContainer';
 import MoviesContainer from './components/movies/MoviesContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieDetail from './components/movies/MovieDetail';
+import NoVocals from './components/NoVocals';
+import ItemDetail from './components/shop/ItemDetail';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
         <Route path='/' element={<MoviesContainer/>} />
         <Route path='/contador' element={<Contador/>} />
         <Route path='/pelicula/:movieId' element={<MovieDetail/>} />
+        <Route path='/vocales/' element={<NoVocals/>} />
+        <Route path='/shop/' element={<ItemDetail/>} />
       </Routes>
     </BrowserRouter>
   );
