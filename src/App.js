@@ -14,6 +14,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieDetail from './components/movies/MovieDetail';
 import NoVocals from './components/NoVocals';
 import ItemDetail from './components/shop/ItemDetail';
+import {FavProvider} from './context/favContext';
 
 function App() {
 
@@ -24,16 +25,18 @@ function App() {
   const myFuncion = () => { /*logica*/ }
 
   return (
-    <BrowserRouter>
-      <NavBar></NavBar>
-      <Routes>
-        <Route path='/' element={<MoviesContainer/>} />
-        <Route path='/contador' element={<Contador/>} />
-        <Route path='/pelicula/:movieId' element={<MovieDetail/>} />
-        <Route path='/vocales/' element={<NoVocals/>} />
-        <Route path='/shop/' element={<ItemDetail/>} />
-      </Routes>
-    </BrowserRouter>
+    <FavProvider>
+      <BrowserRouter>
+        <NavBar></NavBar>
+        <Routes>
+          <Route path='/' element={<MoviesContainer/>} />
+          <Route path='/contador' element={<Contador/>} />
+          <Route path='/pelicula/:movieId' element={<MovieDetail/>} />
+          <Route path='/vocales/' element={<NoVocals/>} />
+          <Route path='/shop/' element={<ItemDetail/>} />
+        </Routes>
+      </BrowserRouter>
+    </FavProvider>
   );
 }
 
