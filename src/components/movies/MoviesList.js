@@ -14,7 +14,7 @@ const MoviesList = () => {
     const getMoviesPromise = new Promise((resolve) => {
       setTimeout(() => {
         resolve( moviesData )
-      }, 2000);
+      }, 500);
     })
 
     getMoviesPromise.then( data => {

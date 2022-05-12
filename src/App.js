@@ -15,6 +15,8 @@ import MovieDetail from './components/movies/MovieDetail';
 import NoVocals from './components/NoVocals';
 import ItemDetail from './components/shop/ItemDetail';
 import {FavProvider} from './context/favContext';
+import ProductDetail from './components/firebase-examples/ProductDetail';
+import Products from './components/firebase-examples/Products';
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
           <Route path='/pelicula/:movieId' element={<MovieDetail/>} />
           <Route path='/vocales/' element={<NoVocals/>} />
           <Route path='/shop/' element={<ItemDetail/>} />
+          <Route path='/producto/' element={<ProductDetail/>} />
+          <Route path='/productos/' element={<Products/>} />
         </Routes>
       </BrowserRouter>
     </FavProvider>
