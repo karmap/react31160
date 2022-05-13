@@ -1,17 +1,18 @@
-import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { DarkmodeContext } from "../../context/darkmodeContext"
-import { FavContext } from "../../context/favContext"
+import { useDarkmode } from "../../context/darkmodeContext"
+import { useFavContext } from "../../context/favContext"
 
 const MovieCard = ( props ) => {
   
   const {id, title, director, year, duration, img} = props.movie
   const defaultImg = 'https://previews.123rf.com/images/pavlostv/pavlostv1806/pavlostv180600511/102793693-icono-de-pel%C3%ADcula-vector-de-stock.jpg?fj=1'
 
-  const darkmode = useContext(DarkmodeContext)
-  const { addToFavorites } = useContext(FavContext)
+  const darkmode = useDarkmode()
+  const { addToFavorites } = useFavContext()
 
-  const addHandler = () => { addToFavorites(id) }
+  const addHandler = () => {
+    addToFavorites( {id, title, img } )
+  }
 
   console.log('dark mode', darkmode);
 

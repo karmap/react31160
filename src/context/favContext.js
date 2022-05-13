@@ -1,16 +1,20 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const FavContext = createContext({
   favorites: [],
 })
 
+export const useFavContext = () => {
+  return useContext( FavContext )
+}
+
 export const FavProvider = ( {children} ) => {
 
   const [favorites, setFavorites] = useState([])
 
-  const addToFavorites = ( movieId ) => {
+  const addToFavorites = ( movie ) => {
     setFavorites( current => {
-      return current.concat( movieId )
+      return current.concat( movie )
     })
   }
 

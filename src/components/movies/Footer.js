@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { DarkmodeContext } from "../../context/darkmodeContext"
 import { FavContext } from "../../context/favContext"
+import FavsList from "./FavsList"
 
 const Footer = () => {
 
@@ -12,7 +13,7 @@ const Footer = () => {
     <>
       <div>Footer</div>
       <strong>Darkmode: {darkmode ? 'TRUE' : 'FALSE'}</strong>
-      { favorites.map( f => <li> {f} </li> ) }
+      <FavsList/>
     </>
   )
 }

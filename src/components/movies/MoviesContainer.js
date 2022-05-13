@@ -1,6 +1,8 @@
+import PreviousMap from "postcss/lib/previous-map"
 import { useEffect, useState } from "react"
 import { DarkmodeContext } from "../../context/darkmodeContext"
 import Spinner from "../Spinner"
+import FavsList from "./FavsList"
 import Footer from "./Footer"
 import MoviesList from "./MoviesList"
 
@@ -11,11 +13,15 @@ const MoviesContainer = () => {
 
   const styles = {
     dark: 'class1 class3 class2',
-    ligth: 'class4 class5 class6'
+    ligth: 'class4 class5 class6',
+    btnDark: 'btn',
+    btnLigth: 'btn bg-slate-200 text-black',
   }
 
   const darkmodeHandler = () => {
-    setDarkmode(true)
+    setDarkmode( previousValue => {
+      return !previousValue
+    })
   }
 
   useEffect(() => {
@@ -31,10 +37,14 @@ const MoviesContainer = () => {
   return (
     <DarkmodeContext.Provider value={darkmode}>
       <h1 className={ darkmode ? styles.dark : styles.ligth}>App de películas</h1>
-      <button className="btn" onClick={darkmodeHandler}>Darkmode on</button>
+      <button
+        className={ darkmode ? styles.btnDark : styles.btnLigth}
+        onClick={darkmodeHandler}>Darkmode { darkmode ? 'off' : 'on'}
+      </button>
       
       {/* { loader ? <Spinner/> : <MoviesList/>} */}
 
+      <FavsList/>
       <MoviesList/>
  
       <Footer/>

@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+import { useFavContext } from "../../context/favContext";
+import FavsList from "./FavsList";
 
 const Contador = () => {
   console.log('Aquí hay un render del componente Contador');
   const [count, setCount] = useState(0)
+
+  const { favorites } = useFavContext()
+  console.log(favorites);
 
   useEffect( () => {
       console.log('[useEffect] El componente se montó');
@@ -33,6 +38,10 @@ const Contador = () => {
       <button onClick={resHandler}> - </button>
       <strong> {count} </strong>
       <button onClick={addHandler}> + </button>
+
+      <div>
+        <FavsList/>
+      </div>
     </>
   )
 }
