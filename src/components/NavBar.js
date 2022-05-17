@@ -13,6 +13,7 @@ const NavBar = () => {
         <li style={{color: 'red'}}><Link to='/contador'>Contador</Link></li>
         <li>Celulares</li>
         <li>Tablets</li>
+        <li style={{color: 'green'}}><Link to='/salvar'>Favoritos</Link></li>
     </div>
   )
 }

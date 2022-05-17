@@ -17,6 +17,7 @@ import ItemDetail from './components/shop/ItemDetail';
 import {FavProvider} from './context/favContext';
 import ProductDetail from './components/firebase-examples/ProductDetail';
 import Products from './components/firebase-examples/Products';
+import SaveFavs from './components/movies/SaveFavs';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/shop/' element={<ItemDetail/>} />
           <Route path='/producto/' element={<ProductDetail/>} />
           <Route path='/productos/' element={<Products/>} />
+          <Route path='/salvar/' element={<SaveFavs/>} />
         </Routes>
       </BrowserRouter>
     </FavProvider>
