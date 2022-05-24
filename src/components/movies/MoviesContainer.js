@@ -36,6 +36,7 @@ const MoviesContainer = () => {
 
   return (
     <DarkmodeContext.Provider value={darkmode}>
+      <h1 className="text-3xl">Mi cambio para deploy automático</h1>
       <h1 className={ darkmode ? styles.dark : styles.ligth}>App de películas</h1>
       <button
         className={ darkmode ? styles.btnDark : styles.btnLigth}
